@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Phudu:wght@300..900&family=Playwrite+IN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
+
+/* ///////////////////////// GÉNÉRAL //////////////////////////*/
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+:root {
+    --DesaturatedRed: hsl(0, 36%, 70%);
+    --SoftRed: hsl(0, 93%, 68%);
+    --DarkGrayishRed: hsl(0, 6%, 24%);
+}
+
+body,
+html {
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, hsl(0, 45%, 100%), hsl(0, 100%, 98%));
+}
+
+
+/* ///////////////////////// CÔTÉ GAUCHE //////////////////////////*/
+main.next_to {
+    display: flex;
+    flex-direction: row;
+    height: 95vh;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-size: cover;
+    position: relative;
+}
+
+.left header {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+
+/* ///////////////////////// CÔTÉ DROIT //////////////////////////*/
+aside {
+    flex: 1;
+}
+
+.img_desktop {
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+}
+
+.img_mobile {
+    display: none;
+}
+
+
+/* ///////////////////////// TEXTES //////////////////////////*/
+.text_container {
+    margin: auto;
+    max-width: 500px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: 2rem;
+    line-height: 1.2;
+}
+
+.h1_title {
+    font-weight: 300;
+    color: var(--DesaturatedRed);
+}
+
+p {
+    color: var(--DesaturatedRed);
+    line-height: 2;
+    margin: 20px 0;
+}
+
+
+/* ///////////////////////// BOUTON //////////////////////////*/
+.submit {
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    background-image: url('images/bg-pattern-desktop.svg');
+    border: 1px solid var(--DesaturatedRed);
+    border-radius: 20px;
+    width: 50%;
+    background-color: none;
+    font-family: 'Josefin Sans';
+    width: 90%;
+    padding-left: 10px;
+}
+
+.required_text {
+    display: none;
+}
+
+input::placeholder {
+    color: var(--DesaturatedRed)
+}
+
+.btn_arrow {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    padding: 5px;
+    border-radius: 20px;
+    width: 15%;
+    margin-left: -45px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ///////////////////////// FOOTER //////////////////////////*/
+footer {
+    text-align: center;
+    font-size: 12px;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-color: none;
+    height: 5vh;
+}
+
+footer a {
+    color: var(--DarkGrayishRed);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--DarkGrayishRed);
+    text-decoration: none;
+}
+
+
+/* ///////////////////////// MEDIA QUERIES //////////////////////////*/
+@media (min-width: 641px) and (max-width: 1023px) {
+    header {
+        padding: 30px;
+    }
+
+    main.next_to {
+        flex-direction: column;
+    }
+
+    .left {
+        position: relative;
+    }
+
+    .left header {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .text_container {
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .submit {
+        justify-content: center;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .img_mobile {
+        display: block;
+        width: 100vw;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        margin-top: 30vh;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+
+    body {
+        width: 100vw;
+        display: flex;
+
+    }
+
+    main.next_to {
+        width: 100vw;
+        height: 95vh;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+    }
+
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 0.9rem;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .text_container {
+        width: 85%;
+        text-align: center;
+    }
+
+    .img_desktop {
+        display: none;
+    }
+
+    .img_mobile {
+        display: flex;
+        width: 100vw;
+        margin-top: 100px;
+    }
+
+    .submit {
+        justify-content: center;
+    }
+
+    footer {
+        margin-top: 5vh;
+    }
+}

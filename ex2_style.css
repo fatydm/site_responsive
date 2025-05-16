@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 60px 100px 100px;
+    gap: 20px;
+}
+
+.item {
+    position: relative;
+    border: 1px solid violet;
+    background-color: violet;
+}
+
+.item-1 {
+    grid-column: span 4;
+    grid-row: 1;
+}
+
+.item-2{
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.item-3{
+    grid-column: span 2;
+}
